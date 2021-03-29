@@ -79,7 +79,6 @@ def main(argv):
     if rotate == 0 or len(input) != 0 and len(inputfile) != 0:
         print(help_arguments)
         sys.exit(1)
-    
 
     if len(input) != 0:    
         string_to_rotate = input
@@ -88,9 +87,7 @@ def main(argv):
     
     if len(alphabet) == 0 or len(string_to_rotate) == 0:
         print(help_arguments)
-        sys.exit(1)
-
-    
+        sys.exit(1)    
     
     rotate_string = ""
     for character in string_to_rotate:
