@@ -13,21 +13,17 @@ help_options = "Option not recognised. Use -h to see help."
 help_arguments = "Bad arguments. Use -h to see help."
 
 def rotateChar(character, position, alphabet, decode=False):
-    
-    isUpperCase = character.isupper()
-    if isUpperCase == True:
-        character = character.lower()
     if decode == True:
         alphabet = alphabet[::-1]
 
     if not character in ("\n", "\r", "\0", "\t"):
-        initial_pos = alphabet.find(character)
-        
-        if initial_pos != -1:
-            isUpperCase = character.isupper()
-            if isUpperCase == True:
-                character = character.lower()
+        #check if character is uppercase, then convert it to lower.
+        isUpperCase = character.isupper()
+        if isUpperCase:
+            character = character.lower()
 
+        initial_pos = alphabet.find(character)
+        if initial_pos != -1:
             alphabet += alphabet
             final_pos = initial_pos + int(position)
             character = alphabet[final_pos]
@@ -36,6 +32,7 @@ def rotateChar(character, position, alphabet, decode=False):
                 print ("final pos = " + str(final_pos))
                 print(character + "->" + alphabet[final_pos])
                 print("is upper case: " + str(isUpperCase))
+            #if the character was uppercase convert it to upper again
             if isUpperCase:
                 character = character.upper()
     return character
