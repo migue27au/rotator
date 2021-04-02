@@ -1,4 +1,5 @@
 usage: python3 rotator.py -i <input string> -r <position> -a <alphabet>
+	
 	-h			show this help.
 	-v			verbose mode.
 	-i <text>		input text to rotate.
